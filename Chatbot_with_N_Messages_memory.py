@@ -3,16 +3,16 @@ from dotenv import load_dotenv
 from langgraph.graph import StateGraph, END
 from langchain_groq import ChatGroq
 
-# Load API key from .env
+
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
 
-# Number of messages to keep in memory (sliding window size)
+# Number of messages to keep in memory
 MAX_MEMORY_MESSAGES = 10  
 
 
-# Define chatbot state (with memory)
+# Define chatbot state 
 class ChatState(dict):
     messages: list  # conversation history
     user_input: str
