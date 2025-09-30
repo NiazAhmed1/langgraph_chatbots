@@ -3,6 +3,7 @@ from typing import Type, Annotated
 from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
+import os
 
 #Load Groq API Key
 load_dotenv()
