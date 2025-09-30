@@ -38,7 +38,7 @@ def chatbot_node(state: ChatState):
         state["messages"] = state["messages"][-MAX_MEMORY_MESSAGES:]
 
 
-    # Pass trimmed history to model
+    # Pass history to model
     response = llm.invoke(state["messages"])
 
     # Save AI response
