@@ -45,7 +45,7 @@ def chatbot_node(state: ChatState):
     state["messages"].append({"role": "assistant", "content": response.content})
 
 
-    # Again trim if exceeded
+    # Again trim if exceeded keep last N messages in memory
     if len(state["messages"]) > MAX_MEMORY_MESSAGES:
         state["messages"] = state["messages"][-MAX_MEMORY_MESSAGES:]
 
