@@ -4,6 +4,7 @@ from langgraph.graph import StateGraph, END
 from langchain_groq import ChatGroq
 
 
+# Load API key from .env 
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
@@ -32,7 +33,7 @@ def chatbot_node(state: ChatState):
     state["messages"].append({"role": "user", "content": state["user_input"]})
 
 
-    # Keep only the last N messages (sliding window)
+    # Keep only the last N messages
     if len(state["messages"]) > MAX_MEMORY_MESSAGES:
         state["messages"] = state["messages"][-MAX_MEMORY_MESSAGES:]
 
