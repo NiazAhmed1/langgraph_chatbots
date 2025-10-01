@@ -48,6 +48,7 @@ def chatbot_node(state: ChatState):
     # If too many messages, summarize
     if len(state["messages"]) > SUMMARY_TRIGGER:
         state["summary"] = summarize_history(state["messages"], state["summary"], llm)
+        
         # Reset memory to summary + last N messages
         state["messages"] = [
             {"role": "system", "content": f"Conversation summary so far: {state['summary']}"}
@@ -69,6 +70,7 @@ graph.add_edge("chatbot", END)
 
 app = graph.compile()
 
+
 # 5. Run chatbot loop
 if __name__ == "__main__":
     print("🤖 AI Chatbot with Summary Memory (type 'exit' to quit)")
@@ -88,5 +90,5 @@ if __name__ == "__main__":
         })
 
         memory = result["messages"]
-        summary = result["summary"]  # keep updated summary
+        summary = result["summary"]  # updated summary
         print("Bot:", result["ai_response"])
