@@ -90,5 +90,5 @@ if __name__ == "__main__":
         })
 
         memory = result["messages"]
-        summary = result["summary"]  # updated summary
+        summary = result["summary"]  # keep updated summary
         print("Bot:", result["ai_response"])
