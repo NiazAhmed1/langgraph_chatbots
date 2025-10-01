@@ -12,7 +12,8 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 MAX_MEMORY_MESSAGES = 10   # keep last 10 detailed exchanges
 SUMMARY_TRIGGER = 20       # when history exceeds this, start summarizing
 
-# 1. Define chatbot state
+
+# 1. Define state
 class ChatState(dict):
     messages: list
     summary: str
