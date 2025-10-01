@@ -3,11 +3,12 @@ from dotenv import load_dotenv
 from langgraph.graph import StateGraph, END
 from langchain_groq import ChatGroq
 
+
 # Load API key from .env
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
-# Memory thresholds
+
 MAX_MEMORY_MESSAGES = 10   # keep last 10 detailed exchanges
 SUMMARY_TRIGGER = 20       # when history exceeds this, start summarizing
 
