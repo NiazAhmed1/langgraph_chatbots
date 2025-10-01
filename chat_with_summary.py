@@ -20,7 +20,7 @@ class ChatState(dict):
     user_input: str
     ai_response: str
 
-# 2. Summarizer function
+# 2. Summary generator
 def summarize_history(messages, current_summary, llm):
     """Summarize conversation history into a compact note."""
     summary_prompt = [
