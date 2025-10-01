@@ -32,11 +32,11 @@ def summarize_history(messages, current_summary, llm):
     summary_response = llm.invoke(summary_prompt)
     return summary_response.content
 
+
 # 3. Chatbot node
 def chatbot_node(state: ChatState):
     llm = ChatGroq(model="llama-3.1-8b-instant", api_key=groq_api_key)
 
-    # Ensure fields exist
     if "messages" not in state:
         state["messages"] = []
     if "summary" not in state:
