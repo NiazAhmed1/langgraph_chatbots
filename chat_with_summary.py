@@ -45,7 +45,7 @@ def chatbot_node(state: ChatState):
     # Add user message
     state["messages"].append({"role": "user", "content": state["user_input"]})
 
-    # If too many messages, summarize
+    # If too many messages (more than 10), summarize
     if len(state["messages"]) > SUMMARY_TRIGGER:
         state["summary"] = summarize_history(state["messages"], state["summary"], llm)
         
