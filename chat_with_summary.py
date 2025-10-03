@@ -9,7 +9,7 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
 
-MAX_MEMORY_MESSAGES = 10   # keep last 10 detailed exchanges
+MAX_MEMORY_MESSAGES = 10   # keep last 10 messages
 SUMMARY_TRIGGER = 20       # when history exceeds this, start summarizing
 
 
