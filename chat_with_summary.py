@@ -10,7 +10,7 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 
 
 MAX_MEMORY_MESSAGES = 10   # keep last 10 messages
-SUMMARY_TRIGGER = 20       # when history exceeds this, start summarizing
+SUMMARY_TRIGGER = 20       # when history exceeds (more than 10) this, start summarizing
 
 
 # 1. Define state
