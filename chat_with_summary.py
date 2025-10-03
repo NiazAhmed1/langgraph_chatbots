@@ -73,7 +73,7 @@ app = graph.compile()
 
 # 5. Run chatbot loop
 if __name__ == "__main__":
-    print("🤖 AI Chatbot with Summary Memory (type 'exit' to quit)")
+    print("AI Chatbot with Summary Memory (type 'exit' to quit)")
     memory = []
     summary = ""
 
